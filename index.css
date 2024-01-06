@@ -1,0 +1,345 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    color: #263138;
+}
+
+
+
+header{
+    background-color: #FF9A6C;
+    display: flex;
+    align-items: center; /*alinhar na vertical*/
+    justify-content: space-between;  /*horizontal e espaçar entre os elementos*/
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+header nav a{
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 32px;
+    text-decoration: none;
+}
+
+#inicio{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 32px;
+    /*topo, direita, baixo, esquerda*/
+    padding: 24px 80px 128px 80px;
+    position: relative; /*elemento base*/
+}
+
+h1, h2{
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 32px; /*espaço entre o título e o parágrafo*/
+}
+
+.paragrafo{
+    line-height: 150%; 
+    margin-bottom: 32px;
+
+}
+
+.button{
+    background-color: #FF725E;
+    border-radius: 8px;
+    color: #FFFFFF; 
+    /*vertical e horizontal*/
+    padding: 16px 32px;
+    text-decoration: none;
+}
+
+.button-transparent{
+    background-color: transparent;
+    color: #FF725E;
+    padding: 16px 32px;
+    text-underline-offset: 4px; /*espaço no sublinhado*/
+}
+
+.absolute{
+    position: absolute; /*fica posicionado em relação a página*/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -4; /*profundidade do elemento*/
+}
+
+#clinica{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+#clinica li{
+    margin-bottom: 16px;
+    margin-left: 32px;
+
+}
+
+#farmacia {
+    padding: 64px 80px;
+    text-align: center;
+}
+
+#farmacia img{
+    margin: 64px auto;
+}
+
+#farmacia .paragrafo {
+    max-width: 950px;
+    margin: 0 auto; /*calcula a margem auto deixa centro*/
+}
+
+#duvidas{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+.duvida {
+    position: relative;
+}
+
+.duvida h3 {
+    border: 2px solid #FF725E;
+    border-radius: 8px; /*arredonda*/
+    cursor: pointer; /*o cursos vira uma mão quando passa nele*/
+    padding: 24px;
+}
+
+.duvida img {
+    position: absolute;
+    top: 32px;
+    right: 24px;
+}
+
+.duvida .paragrafo {
+    border-right: 1px solid #FF725E;
+    border-bottom: 1px solid #FF725E;
+    border-left: 1px solid #FF725E;
+    border-radius: 0 0 8px 8px;
+    margin-top: -8px;
+    padding: 0 24px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden; /*o elemento vai ficar escondido que overflow*/
+    transition: .2s;
+}
+
+.duvida.ativa .paragrafo {
+    height: fit-content; /*faze o conteúd caber, a altura se ajusta*/
+    opacity: 1;
+    padding: 24px;
+}
+
+footer {
+    background-color: rgba(255, 125, 108, 0.25);
+    display: flex;
+    justify-content: space-between; 
+    gap: 80px;
+    padding: 64px 80px;
+}
+
+footer img,
+footer .titulo {
+    display: block; /*a tag strong vem com display inline que não permite margin*/
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+footer nav a {
+    color: #263138;
+    display: block;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+footer p {
+    margin-bottom: 16px;
+    max-width: 350px;
+}
+
+footer p a {
+    color: #263138;
+    text-decoration: none;
+}
+
+#copyright {
+    background-color: #263138;
+    color: #FFFFFF;
+    padding: 24px;
+    text-align: center;
+}
+
+#copyright  a {
+    color: #FF9A6C;
+
+}
+
+/*exemplo*/
+
+@media screen and (max-width: 1255px) {
+
+    header{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    header img {
+        width: 200%;
+        height: auto;
+        margin-bottom: 32;
+    }
+
+    header nav a {
+        font-size: 25;
+        padding-right: 20;
+        padding-left: 20;
+    }
+
+    .container-imagem-1 {  /* estilo imagem 1 - seção 1*/
+        max-width: 95%;
+        min-width: 80%;      
+    }
+
+    #inicio,
+    #clinica,
+    #duvidas {
+        flex-wrap: wrap;
+    }
+
+    /* ESTILO inicio*/
+    #inicio {
+        padding: 120px 30px 0 30px;
+    }
+
+    .button {
+        margin: 70 50;
+        display: block;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 50px 10px 50px 10px;
+    
+        }
+
+    .button-transparent {
+        margin: 70 50;
+        display: block;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 50px 10px ;
+        
+     }
+    
+
+    .absolute {  /*onda colorida*/
+        display: none;
+    }
+
+
+    /* ESTILO DA CLINICA */
+    .container-imagem-2 {  
+        max-width: 95%;
+        min-width: 80%;
+        align-items: center; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    #clinica {
+        margin-top: 80px;
+        padding: 10px 30px;
+    }
+
+    .clinica-texto {
+        margin-bottom: -50px;
+    }
+
+
+    /* ESTILO DA FARMACIA */
+    #farmacia {
+        padding: 0 30px;
+    }
+
+    #farmacia h2 {
+        margin-bottom: -10px;
+        margin-top: 70px;
+    }
+
+    /* ESTILO DAS DUVIDAS */
+    #duvidas {
+        padding: 60px 30px;
+    }
+
+    .container-imagem-4 {  
+        max-width: 95%;
+        min-width: 80%;
+        align-items: center; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    
+    #duvidas img {
+        margin-bottom: -70px;
+    }
+
+    .duvida img {
+        right: 6px;
+    }
+
+    /* ESTILO DO FOOTER */
+    footer {
+        flex-direction: column;
+    }
+
+    footer p {
+        display: block;
+        max-width: 350px;
+        font-size: 30;
+        image-resolution: 30;
+        margin-bottom: 16px;
+    }
+    .imagem-footer {
+        width: 30%;
+        height: auto;
+        margin-bottom: 32;
+    }
+
+    .links-nav-footer {
+        font-size: 45;
+      
+        
+    }
+}
+
+@media screen and (max-width: 768px){
+
+
+    .container-imagem-1 {  /* estilo imagem 1 - seção 1*/
+        display: block;
+        width: 50vw;
+        text-align: center;
+        
+    }
+
+    
+
+
+
+}
